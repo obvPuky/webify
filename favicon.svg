@@ -1,5 +1,5 @@
 <svg width="512" height="512" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
-  <title id="title">Webify — ikona</title>
+  <title id="title">Web-ify — ikona</title>
   <defs>
     <radialGradient id="bg" cx="35%" cy="30%" r="80%">
       <stop offset="0%" stop-color="#1b1a21"/>
