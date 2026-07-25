@@ -10,6 +10,7 @@
   const studioWindow = document.querySelector(".studio-window");
   const pointerAura = document.getElementById("pointerAura");
   const pragueClock = document.getElementById("pragueClock");
+  const mobilePragueClock = document.getElementById("mobilePragueClock");
   const sectionHud = document.getElementById("sectionHud");
   const sectionCurrent = document.getElementById("sectionCurrent");
   const sectionTotal = document.getElementById("sectionTotal");
@@ -19,7 +20,7 @@
 
   document.body.classList.add("premium-ready");
 
-  if (pragueClock) {
+  if (pragueClock || mobilePragueClock) {
     const clockFormatter = new Intl.DateTimeFormat("en-GB", {
       timeZone: "Europe/Prague",
       hour: "2-digit",
@@ -28,8 +29,15 @@
     });
     const syncClock = () => {
       const now = new Date();
-      pragueClock.textContent = `${clockFormatter.format(now)} / PRG`;
-      pragueClock.dateTime = now.toISOString();
+      const formattedTime = clockFormatter.format(now);
+      if (pragueClock) {
+        pragueClock.textContent = `${formattedTime} / PRG`;
+        pragueClock.dateTime = now.toISOString();
+      }
+      if (mobilePragueClock) {
+        mobilePragueClock.textContent = formattedTime;
+        mobilePragueClock.dateTime = now.toISOString();
+      }
     };
     syncClock();
     window.setInterval(syncClock, 30000);
