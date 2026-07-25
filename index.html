@@ -42,6 +42,7 @@
 <meta name="msapplication-TileColor" content="#050812">
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#050812">
+<meta name="color-scheme" content="dark light">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -789,6 +790,8 @@ body.light-mode .project-metrics b{color:#111827}
   .project-visual:hover img{transform:none}
 }
 </style>
+<link rel="stylesheet" href="assets/premium.css?v=20260725">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i18n="skipLink">Přejít na hlavní obsah</a>
@@ -802,9 +805,9 @@ body.light-mode .project-metrics b{color:#111827}
 </div>
 <header>
 <nav aria-label="Hlavní navigace">
-  <a class="logo" href="#top">Web-ify</a>
+  <a class="logo" href="#top" aria-label="Web-ify — úvod"><span class="logo-mark">W/</span><span>Web-ify</span></a>
   <div class="nav-links"><a href="#cenik" data-i18n="navPricing">Ceník</a><a href="#kalkulacka" data-i18n="navCalculator">Kalkulačka</a><a href="#proces" data-i18n="navProcess">Proces</a><a href="#reference" data-i18n="navWork">Reference</a><a href="#kontakt" data-i18n="navContact">Kontakt</a><a href="#team" data-i18n="navTeam">Tým</a></div>
-  <a class="btn btn-primary nav-cta" href="#kontakt" data-i18n="navCta">Poptat web</a><button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobilePanel">☰</button>
+  <div class="nav-end"><span class="nav-availability"><i></i> open for projects / 2026</span><a class="btn btn-primary nav-cta" href="#kontakt" data-i18n="navCta">Poptat web</a><button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobilePanel"><span></span><span></span></button></div>
 </nav>
 </header>
 
@@ -819,7 +822,7 @@ body.light-mode .project-metrics b{color:#111827}
     <a href="#kontakt" data-i18n="navContact">Kontakt</a>
     <a href="#team" data-i18n="navTeam">Tým</a>
     <div class="mobile-tools">
-      <button class="tool-btn" id="mobileThemeToggle" type="button" aria-label="Přepnout barevný motiv">☀️ / 🌙</button>
+      <button class="tool-btn" id="mobileThemeToggle" type="button" aria-label="Přepnout barevný motiv"><span>MODE</span></button>
       <div class="lang-extra" aria-label="Výběr jazyka">
         <button class="lang-btn active" type="button" data-lang="cs">CZ</button>
         <button class="lang-btn" type="button" data-lang="en">EN</button>
@@ -833,17 +836,48 @@ body.light-mode .project-metrics b{color:#111827}
 <main id="main-content">
 <section class="hero" id="top">
   <div class="wrap reveal">
-    <span class="badge"><i></i> <span data-i18n="heroBadge">tvorba webů · design · branding</span></span>
-    <h1 data-i18n-html="heroTitle">Weby, které vypadají <span class="gradient">jinak než šablony.</span></h1>
-    <p class="lead" data-i18n="heroLead">Jsme mladý digitální tým. Děláme moderní weby, loga a jednoduchá online řešení pro firmy, které chtějí vypadat profesionálně.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="#cenik" data-i18n="heroWork">Zobrazit ceník</a><a class="btn btn-dark" href="#kontakt" data-i18n="heroContact">Nezávazně poptat</a></div>
-    <div class="hero-card">
-      <div class="terminal">
-        <b>web-ify@studio</b>:~$ npm run launch<br>
-        <span data-i18n-html="terminalFeatures"><em>✓</em> moderní design &nbsp; <em>✓</em> responzivní web &nbsp; <em>✓</em> jasná cena</span><br>
-        <span class="typing" data-i18n="terminalLine">Připravujeme web, který bude sedět vaší značce...</span>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="badge"><i></i> <span data-i18n="heroBadge">tvorba webů · design · branding</span></span>
+        <h1 data-i18n-html="heroTitle">Weby, které vypadají <span class="gradient">jinak než šablony.</span></h1>
+        <p class="lead" data-i18n="heroLead">Jsme mladý digitální tým. Děláme moderní weby, loga a jednoduchá online řešení pro firmy, které chtějí vypadat profesionálně.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#kontakt" data-i18n="heroContact">Nezávazně poptat</a><a class="hero-text-link" href="#reference"><span data-i18n="heroWork">Prohlédnout práci</span><i>↘</i></a></div>
+        <div class="hero-proof" aria-label="Klíčové výhody">
+          <span><b>25+</b><small data-i18n="statProjects">hotových projektů</small></span>
+          <span><b>&lt;24h</b><small data-i18n="heroResponse">reakce na poptávku</small></span>
+          <span><b>4×</b><small data-i18n="statLanguages">jazyky webu</small></span>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="studio-window">
+          <div class="studio-topbar">
+            <span class="studio-brand"><i></i> WEB—IFY / LIVE CANVAS</span>
+            <span class="studio-status">● ONLINE</span>
+          </div>
+          <div class="studio-workspace">
+            <div class="studio-rail">
+              <span class="active">01</span><span>02</span><span>03</span>
+              <i></i>
+              <small>DESIGN<br>BUILD<br>SHIP</small>
+            </div>
+            <div class="studio-canvas">
+              <div class="canvas-label">SELECTED PROJECT / 25</div>
+              <div class="canvas-title">Digital presence<br>with a pulse.</div>
+              <div class="canvas-line"><span></span><span></span><span></span></div>
+              <div class="canvas-modules">
+                <div class="canvas-module canvas-score"><small>IMPACT</small><b>94</b><i></i></div>
+                <div class="canvas-module canvas-system"><small>SYSTEM</small><span>STRATEGY</span><span>IDENTITY</span><span>WEB</span></div>
+              </div>
+              <div class="canvas-cursor"><span>drag</span></div>
+            </div>
+          </div>
+          <div class="studio-footer">
+            <span>web-ify.cz</span><span>Havířov / CZ</span><span>©26</span>
+          </div>
+        </div>
       </div>
     </div>
+    <a class="hero-scroll" href="#statistiky" aria-label="Pokračovat na výsledky"><span></span> scroll to explore</a>
   </div>
 </section>
 
@@ -863,6 +897,10 @@ body.light-mode .project-metrics b{color:#111827}
     </div>
   </div>
 </section>
+
+<div class="capability-marquee" aria-hidden="true">
+  <div><span>STRATEGY</span><i>✦</i><span>WEB DESIGN</span><i>✦</i><span>DEVELOPMENT</span><i>✦</i><span>BRANDING</span><i>✦</i><span>MOTION</span><i>✦</i><span>STRATEGY</span><i>✦</i><span>WEB DESIGN</span><i>✦</i><span>DEVELOPMENT</span><i>✦</i><span>BRANDING</span><i>✦</i><span>MOTION</span><i>✦</i></div>
+</div>
 
 <section id="cenik">
   <div class="wrap">
@@ -1070,7 +1108,7 @@ body.light-mode .project-metrics b{color:#111827}
 </div>
 <script>
 const els=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06,rootMargin:'0px 0px -4% 0px'});
 els.forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
 
 const form=document.getElementById('contactForm');
@@ -1320,7 +1358,7 @@ document.getElementById('serviceToContact')?.addEventListener('click', fillServi
 </script>
 
 <div class="top-tools">
-  <button class="tool-btn" id="themeToggle" type="button" aria-label="Přepnout barevný motiv">☀️ / 🌙</button>
+  <button class="tool-btn" id="themeToggle" type="button" aria-label="Přepnout barevný motiv"><span>MODE</span></button>
   <div class="lang-extra" aria-label="Výběr jazyka">
     <button class="lang-btn active" type="button" data-lang="cs">CZ</button>
     <button class="lang-btn" type="button" data-lang="en">EN</button>
@@ -1350,7 +1388,7 @@ document.getElementById('serviceToContact')?.addEventListener('click', fillServi
       <button type="submit" aria-label="Odeslat dotaz">➤</button>
     </form>
   </div>
-  <button class="chat-toggle" id="chatToggle" type="button" aria-label="Otevřít průvodce Web-ify" aria-expanded="false" aria-controls="chatPanel">💬</button>
+  <button class="chat-toggle" id="chatToggle" type="button" aria-label="Otevřít průvodce Web-ify" aria-expanded="false" aria-controls="chatPanel"><span>ASK</span></button>
 </div>
 
 
@@ -1370,7 +1408,7 @@ const translations = {
   cs: {},
   en: {
     skipLink:'Skip to main content',navWork:'Work',navPricing:'Pricing',navCalculator:'Calculator',navProcess:'Process',navContact:'Contact',navTeam:'Team',navTips:'Tips',navCta:'Request a website',
-    heroBadge:'web development · design · branding',heroTitle:'Websites that look <span class="gradient">nothing like templates.</span>',heroLead:'We are a young digital team creating modern websites, logos and simple online solutions for companies that want to look professional.',heroWork:'View pricing',heroContact:'Request a quote',
+    heroBadge:'web development · design · branding',heroTitle:'Websites that look <span class="gradient">nothing like templates.</span>',heroLead:'We are a young digital team creating modern websites, logos and simple online solutions for companies that want to look professional.',heroWork:'View our work',heroContact:'Request a quote',heroResponse:'inquiry response',
     terminalFeatures:'<em>✓</em> modern design &nbsp; <em>✓</em> responsive website &nbsp; <em>✓</em> clear pricing',terminalLine:'Building a website that truly fits your brand...',
     statsKicker:'Results',statsTitle:'Numbers that grow with you.',statsText:'We are building Web-ify as a young brand that wants to grow fairly, quickly and visibly.',statProjects:'completed projects',statResponsive:'% responsive websites',statResponse:'h response to inquiries',statLanguages:'website languages',
     workKicker:'Latest project',workTitle:'Beer’s Barbershop',workIntro:'A client website combining a strong barbershop atmosphere with quick booking and a clear service offer.',workLive:'Open reference →',workHeading:'A bold presentation that leads straight to booking.',workText:'We designed a complete responsive website with pricing, services, reviews, contact details, a map and a clear booking path. The result retains a premium barber style while staying easy to use on mobile.',workMetricOne:'<b>9</b> main sections',workMetricTwo:'<b>4</b> language versions',workMetricThree:'<b>1</b> clear goal: booking',workChip:'Booking',workCta:'View the full website →',workAll:'All projects →',
@@ -1392,7 +1430,7 @@ const translations = {
   },
   pl: {
     skipLink:'Przejdź do głównej treści',navWork:'Realizacje',navPricing:'Cennik',navCalculator:'Kalkulator',navProcess:'Proces',navContact:'Kontakt',navTeam:'Zespół',navTips:'Porady',navCta:'Zamów stronę',
-    heroBadge:'tworzenie stron · design · branding',heroTitle:'Strony, które wyglądają <span class="gradient">inaczej niż szablony.</span>',heroLead:'Jesteśmy młodym zespołem digital. Tworzymy nowoczesne strony, logotypy i proste rozwiązania online dla firm, które chcą wyglądać profesjonalnie.',heroWork:'Zobacz cennik',heroContact:'Poproś o wycenę',
+    heroBadge:'tworzenie stron · design · branding',heroTitle:'Strony, które wyglądają <span class="gradient">inaczej niż szablony.</span>',heroLead:'Jesteśmy młodym zespołem digital. Tworzymy nowoczesne strony, logotypy i proste rozwiązania online dla firm, które chcą wyglądać profesjonalnie.',heroWork:'Zobacz realizacje',heroContact:'Poproś o wycenę',heroResponse:'odpowiedź na zapytanie',
     terminalFeatures:'<em>✓</em> nowoczesny design &nbsp; <em>✓</em> responsywna strona &nbsp; <em>✓</em> jasna cena',terminalLine:'Tworzymy stronę dopasowaną do Twojej marki...',
     statsKicker:'Wyniki',statsTitle:'Liczby, które rosną razem z Tobą.',statsText:'Budujemy Web-ify jako młodą markę, która chce rozwijać się uczciwie, szybko i widocznie.',statProjects:'ukończonych projektów',statResponsive:'% responsywnych stron',statResponse:'h na odpowiedź',statLanguages:'wersje językowe',
     workKicker:'Ostatnia realizacja',workTitle:'Beer’s Barbershop',workIntro:'Strona klienta łącząca wyrazisty klimat barbershopu z szybką rezerwacją i przejrzystą ofertą.',workLive:'Otwórz realizację →',workHeading:'Wyrazista prezentacja prowadząca prosto do rezerwacji.',workText:'Zaprojektowaliśmy kompletną responsywną stronę z cennikiem, usługami, opiniami, kontaktem, mapą i prostą ścieżką rezerwacji. Całość zachowuje premium barber styl i jest wygodna na telefonie.',workMetricOne:'<b>9</b> głównych sekcji',workMetricTwo:'<b>4</b> wersje językowe',workMetricThree:'<b>1</b> jasny cel: rezerwacja',workChip:'Rezerwacja',workCta:'Zobacz całą stronę →',workAll:'Wszystkie projekty →',
@@ -1414,7 +1452,7 @@ const translations = {
   },
   de: {
     skipLink:'Zum Hauptinhalt springen',navWork:'Referenzen',navPricing:'Preise',navCalculator:'Kalkulator',navProcess:'Ablauf',navContact:'Kontakt',navTeam:'Team',navTips:'Tipps',navCta:'Website anfragen',
-    heroBadge:'Webentwicklung · Design · Branding',heroTitle:'Websites, die <span class="gradient">nicht wie Templates aussehen.</span>',heroLead:'Wir sind ein junges Digitalteam und erstellen moderne Websites, Logos und einfache Online-Lösungen für Unternehmen, die professionell auftreten möchten.',heroWork:'Preise ansehen',heroContact:'Angebot anfragen',
+    heroBadge:'Webentwicklung · Design · Branding',heroTitle:'Websites, die <span class="gradient">nicht wie Templates aussehen.</span>',heroLead:'Wir sind ein junges Digitalteam und erstellen moderne Websites, Logos und einfache Online-Lösungen für Unternehmen, die professionell auftreten möchten.',heroWork:'Projekte ansehen',heroContact:'Angebot anfragen',heroResponse:'Antwort auf Anfragen',
     terminalFeatures:'<em>✓</em> modernes Design &nbsp; <em>✓</em> responsive Website &nbsp; <em>✓</em> klare Preise',terminalLine:'Wir bauen eine Website, die wirklich zu Ihrer Marke passt...',
     statsKicker:'Ergebnisse',statsTitle:'Zahlen, die mit Ihnen wachsen.',statsText:'Wir bauen Web-ify als junge Marke auf, die fair, schnell und sichtbar wachsen möchte.',statProjects:'abgeschlossene Projekte',statResponsive:'% responsive Websites',statResponse:'h Antwortzeit',statLanguages:'Website-Sprachen',
     workKicker:'Letztes Projekt',workTitle:'Beer’s Barbershop',workIntro:'Eine Kundenwebsite, die markante Barbershop-Atmosphäre mit schneller Buchung und einem klaren Angebot verbindet.',workLive:'Referenz öffnen →',workHeading:'Ein starker Auftritt, der direkt zur Buchung führt.',workText:'Wir haben eine vollständige responsive Website mit Preisen, Leistungen, Bewertungen, Kontakt, Karte und einem klaren Buchungsweg gestaltet. Das Ergebnis bewahrt den hochwertigen Barber-Stil und bleibt auf Mobilgeräten übersichtlich.',workMetricOne:'<b>9</b> Hauptbereiche',workMetricTwo:'<b>4</b> Sprachversionen',workMetricThree:'<b>1</b> klares Ziel: Buchung',workChip:'Buchung',workCta:'Vollständige Website ansehen →',workAll:'Alle Projekte →',
@@ -1948,7 +1986,7 @@ calcPrice();
 
 </script>
 
-<button id="toTop">↑</button><script>
+<button id="toTop" type="button" aria-label="Zpět nahoru">↑</button><script>
 const topBtn=document.getElementById('toTop');
 window.addEventListener('scroll',()=>{topBtn.classList.toggle('show',window.scrollY>500)});
 topBtn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
@@ -1957,5 +1995,7 @@ oldToggle?.addEventListener('click',()=>{
  document.body.classList.add('theme-fade');
  setTimeout(()=>document.body.classList.remove('theme-fade'),550);
 });
-</script></body>
+</script>
+<script src="assets/premium.js?v=20260725" defer></script>
+</body>
 </html>
