@@ -164,6 +164,7 @@ header nav{
   transition:transform .4s var(--ease),box-shadow .4s var(--ease);
 }
 .logo:hover .logo-mark{transform:rotate(-4deg) scale(1.045);box-shadow:0 10px 28px rgba(255,107,53,.2)}
+.mobile-nav-signal{display:none}
 .nav-links{gap:clamp(16px,2vw,30px);font-size:12px;font-weight:650;letter-spacing:.04em}
 .nav-links a{
   position:relative;
@@ -1104,8 +1105,60 @@ body.light-mode .service-modal-box,body.light-mode .privacy-dialog,body.light-mo
 
 @media(max-width:640px){
   .wrap{padding-inline:18px}
+  header nav{
+    display:grid;
+    grid-template-columns:38px minmax(0,1fr) 42px;
+    align-items:center;
+    gap:12px;
+    padding:9px 12px;
+  }
+  header .logo{justify-self:start}
   .logo>span:last-child{display:none}
   .logo-mark{width:38px;height:38px}
+  .mobile-nav-signal{
+    display:flex;
+    width:min(100%,180px);
+    min-width:0;
+    justify-self:center;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    padding:3px 12px 2px;
+    border-inline:1px solid var(--line);
+    color:var(--white);
+    text-align:center;
+  }
+  .mobile-nav-signal b{
+    max-width:100%;
+    overflow:hidden;
+    font:700 11px/1 "Syne",sans-serif;
+    letter-spacing:.16em;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .mobile-nav-signal small{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    color:var(--dim);
+    font:500 7px/1 "DM Mono",monospace;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .mobile-nav-signal small i{
+    width:4px;
+    height:4px;
+    flex:0 0 4px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 9px rgba(255,107,53,.72);
+    animation:statusPulse 2.4s var(--ease) infinite;
+  }
+  .mobile-nav-signal time{color:var(--muted);font-variant-numeric:tabular-nums}
+  header .nav-end{justify-self:end;gap:0}
   .hero{padding-top:112px;padding-bottom:56px}
   h1{font-size:clamp(50px,15.5vw,74px);line-height:.89}
   .lead{font-size:15px}
@@ -1169,7 +1222,7 @@ body.light-mode .service-modal-box,body.light-mode .privacy-dialog,body.light-mo
 
 @media(prefers-reduced-motion:reduce){
   .pointer-aura{display:none}
-  .nav-availability i,.matrix span,.canvas-cursor,.hero-scroll span,.capability-marquee>div{animation:none!important}
+  .nav-availability i,.mobile-nav-signal small i,.matrix span,.canvas-cursor,.hero-scroll span,.capability-marquee>div{animation:none!important}
   .matrix span{transform:translate3d(0,36vh,0);opacity:.32}
   .studio-window{transform:none!important}
 }
