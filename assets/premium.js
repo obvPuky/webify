@@ -92,17 +92,6 @@
       if (!frame) frame = requestAnimationFrame(renderTilt);
     });
 
-    document.querySelectorAll(".btn,.hero-text-link").forEach(control => {
-      control.addEventListener("pointermove", event => {
-        const rect = control.getBoundingClientRect();
-        const x = (event.clientX - rect.left - rect.width / 2) * .12;
-        const y = (event.clientY - rect.top - rect.height / 2) * .16;
-        control.style.transform = `translate3d(${x}px,${y - 2}px,0)`;
-      }, { passive: true });
-      control.addEventListener("pointerleave", () => {
-        control.style.removeProperty("transform");
-      });
-    });
   }
 
   document.querySelectorAll(".price-card-click").forEach(card => {
