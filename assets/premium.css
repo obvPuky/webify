@@ -76,19 +76,19 @@ main,footer{position:relative;z-index:2}
 .matrix span{
   display:block;
   top:-28vh;
-  color:rgba(244,239,230,.15);
+  color:rgba(244,239,230,.18);
   font:500 11px/1.75 "DM Mono",monospace;
   letter-spacing:.34em;
-  text-shadow:0 0 18px rgba(244,239,230,.12);
-  opacity:.82;
+  text-shadow:0 0 20px rgba(244,239,230,.15);
+  opacity:.9;
   animation-name:premiumMatrixRain;
   animation-timing-function:linear;
   animation-iteration-count:infinite;
   will-change:transform;
   transform:translate3d(0,-12vh,0);
 }
-.matrix span:nth-of-type(2n){color:rgba(255,107,53,.18)}
-.matrix span:nth-of-type(3n){color:rgba(244,239,230,.095)}
+.matrix span:nth-of-type(2n){color:rgba(255,107,53,.22)}
+.matrix span:nth-of-type(3n){color:rgba(244,239,230,.12)}
 @keyframes premiumMatrixRain{
   from{transform:translate3d(0,-12vh,0)}
   to{transform:translate3d(0,142vh,0)}
@@ -547,25 +547,53 @@ h1{
 .card:nth-child(8) .icon,.card:nth-child(8) h3,.card:nth-child(8) .price,.card:nth-child(8)>p{grid-column:1}
 .card:nth-child(8) .features,.card:nth-child(8) .detail-pill{grid-column:2}
 .icon{
-  width:auto;
-  height:auto;
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
   margin:0 0 auto;
-  border-radius:0;
-  background:none;
-  color:var(--dim);
-  font:500 11px/1 "DM Mono",monospace;
+  overflow:hidden;
+  border:1px solid rgba(255,107,53,.36);
+  border-radius:10px;
+  background:
+    linear-gradient(145deg,rgba(255,107,53,.14),rgba(255,107,53,.025)),
+    rgba(20,20,16,.76);
+  color:var(--accent);
+  box-shadow:inset 0 0 0 1px rgba(244,239,230,.025);
+  font:600 12px/1 "DM Mono",monospace;
   animation:none;
+  transition:transform .28s var(--ease),border-color .28s var(--ease),background .28s var(--ease),box-shadow .28s var(--ease);
 }
 .icon{font-size:0}
-.icon::before{font-size:11px}
-.card:nth-child(1) .icon::before{content:"01 / WEB"}
-.card:nth-child(2) .icon::before{content:"02 / BUSINESS"}
-.card:nth-child(3) .icon::before{content:"03 / COMMERCE"}
-.card:nth-child(4) .icon::before{content:"04 / SUPPORT"}
-.card:nth-child(5) .icon::before{content:"05 / IDENTITY"}
-.card:nth-child(6) .icon::before{content:"06 / RESEARCH"}
-.card:nth-child(7) .icon::before{content:"07 / PRODUCT"}
-.card:nth-child(8) .icon::before{content:"08 / MOTION"}
+.icon::before{position:relative;z-index:1;font-size:12px;letter-spacing:-.06em}
+.icon::after{
+  content:"";
+  position:absolute;
+  top:6px;
+  right:6px;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 10px rgba(255,107,53,.7);
+}
+.card:hover .icon{
+  transform:translateY(-2px);
+  border-color:rgba(255,107,53,.72);
+  background:
+    linear-gradient(145deg,rgba(255,107,53,.2),rgba(255,107,53,.045)),
+    rgba(20,20,16,.84);
+  box-shadow:inset 0 0 0 1px rgba(255,107,53,.08),0 10px 28px rgba(255,107,53,.08);
+}
+.card:nth-child(1) .icon::before{content:"</>"}
+.card:nth-child(2) .icon::before{content:"↗"}
+.card:nth-child(3) .icon::before{content:"▦"}
+.card:nth-child(4) .icon::before{content:"24"}
+.card:nth-child(5) .icon::before{content:"◇"}
+.card:nth-child(6) .icon::before{content:"◎"}
+.card:nth-child(7) .icon::before{content:"{ }"}
+.card:nth-child(8) .icon::before{content:"▶"}
 .card h3{max-width:460px;margin:34px 0 10px;font:630 clamp(27px,3vw,42px)/1 "Syne",sans-serif;letter-spacing:-.055em;text-wrap:balance}
 .price{margin:0 0 18px;color:var(--accent)!important;font:600 clamp(20px,2vw,28px)/1.1 "Manrope",sans-serif;letter-spacing:-.04em;animation:none}
 .card p,.card li{max-width:52ch;color:var(--muted);font-size:14px;line-height:1.65}
@@ -852,13 +880,18 @@ body.light-mode .matrix{
     var(--bg);
   background-size:64px 64px,64px 64px,auto,auto;
 }
-body.light-mode .matrix span{color:rgba(24,22,17,.11);text-shadow:none}
-body.light-mode .matrix span:nth-of-type(2n){color:rgba(180,64,24,.14)}
-body.light-mode .matrix span:nth-of-type(3n){color:rgba(24,22,17,.07)}
+body.light-mode .matrix span{color:rgba(24,22,17,.14);text-shadow:none}
+body.light-mode .matrix span:nth-of-type(2n){color:rgba(180,64,24,.17)}
+body.light-mode .matrix span:nth-of-type(3n){color:rgba(24,22,17,.09)}
 body.light-mode header{background:rgba(238,233,223,.7)}
 body.light-mode header.scrolled{background:rgba(238,233,223,.92)}
 body.light-mode .logo{color:#181611}
 body.light-mode .card,body.light-mode .member,body.light-mode .step,body.light-mode .contact-box,body.light-mode .calc-box{background:var(--card)}
+body.light-mode .icon{
+  border-color:rgba(180,64,24,.28);
+  background:linear-gradient(145deg,rgba(255,107,53,.13),rgba(255,107,53,.025)),rgba(248,243,234,.88);
+  box-shadow:inset 0 0 0 1px rgba(24,22,17,.025);
+}
 body.light-mode .calc-field{background:var(--card)}
 body.light-mode .calc-field select,body.light-mode .calc-field input,body.light-mode .field input,body.light-mode .field textarea,body.light-mode .field select{color:#181611}
 body.light-mode .field select option,body.light-mode .calc-field option{background:#f8f3ea;color:#181611}
