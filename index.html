@@ -790,12 +790,18 @@ body.light-mode .project-metrics b{color:#111827}
   .project-visual:hover img{transform:none}
 }
 </style>
-<link rel="stylesheet" href="assets/premium.css?v=20260725-3">
+<link rel="stylesheet" href="assets/premium.css?v=20260725-4">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i18n="skipLink">Přejít na hlavní obsah</a>
 <div class="progress-bar" id="progressBar"></div>
+<div class="pointer-aura" id="pointerAura" aria-hidden="true"></div>
+<div class="section-hud" id="sectionHud" aria-hidden="true">
+  <span class="section-hud-index"><b id="sectionCurrent">01</b><i>/</i><span id="sectionTotal">09</span></span>
+  <span class="section-hud-track"><i id="sectionHudProgress"></i></span>
+  <span class="section-hud-label" id="sectionHudLabel">Web-ify</span>
+</div>
 <div class="aurora" aria-hidden="true"></div>
 <div class="custom-cursor" id="customCursor"></div><div class="cursor-dot" id="cursorDot"></div>
 
@@ -807,7 +813,7 @@ body.light-mode .project-metrics b{color:#111827}
 <nav aria-label="Hlavní navigace">
   <a class="logo" href="#top" aria-label="Web-ify — úvod"><span class="logo-mark">W/</span><span>Web-ify</span></a>
   <div class="nav-links"><a href="#cenik" data-i18n="navPricing">Ceník</a><a href="#kalkulacka" data-i18n="navCalculator">Kalkulačka</a><a href="#proces" data-i18n="navProcess">Proces</a><a href="#reference" data-i18n="navWork">Reference</a><a href="#kontakt" data-i18n="navContact">Kontakt</a><a href="#team" data-i18n="navTeam">Tým</a></div>
-  <div class="nav-end"><span class="nav-availability"><i></i> open for projects / 2026</span><a class="btn btn-primary nav-cta" href="#kontakt" data-i18n="navCta">Poptat web</a><button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobilePanel"><span></span><span></span></button></div>
+  <div class="nav-end"><span class="nav-availability"><i></i><span>open for projects</span><time id="pragueClock" aria-label="Aktuální čas v Praze">--:-- / PRG</time></span><a class="btn btn-primary nav-cta" href="#kontakt" data-i18n="navCta">Poptat web</a><button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobilePanel"><span></span><span></span></button></div>
 </nav>
 </header>
 
@@ -1018,7 +1024,8 @@ body.light-mode .project-metrics b{color:#111827}
           </div>
           <div class="field full">
             <label for="message" data-i18n="formMessage">Zpráva</label>
-            <textarea id="message" name="Zpráva" rows="5" placeholder="Napište pár vět o projektu, termínu a představě." data-i18n-placeholder="formMessagePlaceholder" required></textarea>
+            <textarea id="message" name="Zpráva" rows="5" maxlength="600" aria-describedby="messageCounter" placeholder="Napište pár vět o projektu, termínu a představě." data-i18n-placeholder="formMessagePlaceholder" required></textarea>
+            <span class="field-counter" id="messageCounter">0 / 600</span>
           </div>
           <div class="privacy-confirm">
             <label for="privacyConsent">
@@ -1347,6 +1354,7 @@ function fillService(){
   if(msg && activeService && !msg.value){
     const serviceName = document.querySelector(`[data-service="${activeService}"] h3`)?.textContent || activeService;
     msg.value = `${modalCopy[currentLang].message}: ${serviceName}.`;
+    msg.dispatchEvent(new Event('input', {bubbles:true}));
   }
   closeService();
   document.getElementById('kontakt')?.scrollIntoView({behavior:'smooth'});
@@ -1900,11 +1908,17 @@ window.addEventListener('keydown', event => {
 <script>
 // WEB-IFY ULTRA: progress, mobile menu, stats, calculator, cursor, trail, extended languages
 const progressBar = document.getElementById('progressBar');
-window.addEventListener('scroll', () => {
+let progressFrame = 0;
+function syncScrollProgress(){
   const max = document.documentElement.scrollHeight - innerHeight;
-  const p = max > 0 ? (scrollY / max) * 100 : 0;
-  if(progressBar) progressBar.style.width = p + '%';
+  const p = max > 0 ? scrollY / max : 0;
+  if(progressBar) progressBar.style.transform = `scaleX(${p})`;
+  progressFrame = 0;
+}
+window.addEventListener('scroll', () => {
+  if(!progressFrame) progressFrame = requestAnimationFrame(syncScrollProgress);
 }, {passive:true});
+syncScrollProgress();
 
 const mobileBtn = document.getElementById('mobileMenuBtn');
 const mobilePanel = document.getElementById('mobilePanel');
@@ -1996,6 +2010,6 @@ oldToggle?.addEventListener('click',()=>{
  setTimeout(()=>document.body.classList.remove('theme-fade'),550);
 });
 </script>
-<script src="assets/premium.js?v=20260725-3" defer></script>
+<script src="assets/premium.js?v=20260725-4" defer></script>
 </body>
 </html>
