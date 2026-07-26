@@ -122,7 +122,7 @@
     header?.classList.toggle("scrolled", scrolled);
     themeMeta?.setAttribute(
       "content",
-      document.body.classList.contains("light-mode") ? "#eee9df" : "#0a0a08"
+      document.body.classList.contains("light-mode") ? "#f3f7fc" : "#081225"
     );
   };
 

@@ -3,25 +3,25 @@
   <desc id="desc">Moderní weby, loga a digitální služby</desc>
   <defs>
     <radialGradient id="bg" cx="30%" cy="20%" r="100%">
-      <stop offset="0%" stop-color="#1b1a21"/>
-      <stop offset="100%" stop-color="#050812"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
     </radialGradient>
     <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff8a3d"/>
-      <stop offset="55%" stop-color="#e8482c"/>
-      <stop offset="100%" stop-color="#7c5cff"/>
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
     </linearGradient>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="36"/>
     </filter>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1050" cy="95" r="210" fill="#7c5cff" opacity=".2" filter="url(#glow)"/>
-  <circle cx="120" cy="560" r="220" fill="#ff8a3d" opacity=".18" filter="url(#glow)"/>
-  <rect x="70" y="70" width="490" height="490" rx="112" fill="#0a0a0d" stroke="#fff" stroke-opacity=".1" stroke-width="3"/>
+  <circle cx="1050" cy="95" r="210" fill="#60a5fa" opacity=".22" filter="url(#glow)"/>
+  <circle cx="120" cy="560" r="220" fill="#3b82f6" opacity=".16" filter="url(#glow)"/>
+  <rect x="70" y="70" width="490" height="490" rx="112" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
   <path d="M140 200l72 222 56-144 56 144 72-222" stroke="url(#brand)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M396 200l72 222" stroke="#7c5cff" stroke-width="36" stroke-linecap="round" fill="none"/>
+  <path d="M396 200l72 222" stroke="#60a5fa" stroke-width="36" stroke-linecap="round" fill="none"/>
   <text x="630" y="285" fill="url(#brand)" font-family="Inter, Arial, sans-serif" font-size="122" font-weight="900" letter-spacing="-8">Web-ify</text>
-  <text x="635" y="360" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">Weby, loga a digitální služby</text>
-  <text x="635" y="420" fill="#aab3c5" font-family="Inter, Arial, sans-serif" font-size="26">Moderní design. Jasné ceny. Osobní přístup.</text>
+  <text x="635" y="360" fill="#10223f" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">Weby, loga a digitální služby</text>
+  <text x="635" y="420" fill="#53657d" font-family="Inter, Arial, sans-serif" font-size="26">Moderní design. Jasné ceny. Osobní přístup.</text>
 </svg>
