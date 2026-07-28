@@ -1,5 +1,5 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Web-ify</title>
+  <title id="title">Webfine</title>
   <desc id="desc">Moderní weby, loga a digitální služby</desc>
   <defs>
     <radialGradient id="bg" cx="30%" cy="20%" r="100%">
@@ -21,7 +21,7 @@
   <rect x="70" y="70" width="490" height="490" rx="112" fill="#ffffff" stroke="#93c5fd" stroke-width="3"/>
   <path d="M140 200l72 222 56-144 56 144 72-222" stroke="url(#brand)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <path d="M396 200l72 222" stroke="#60a5fa" stroke-width="36" stroke-linecap="round" fill="none"/>
-  <text x="630" y="285" fill="url(#brand)" font-family="Inter, Arial, sans-serif" font-size="122" font-weight="900" letter-spacing="-8">Web-ify</text>
+  <text x="630" y="285" fill="url(#brand)" font-family="Inter, Arial, sans-serif" font-size="122" font-weight="900" letter-spacing="-8">Webfine</text>
   <text x="635" y="360" fill="#10223f" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">Weby, loga a digitální služby</text>
   <text x="635" y="420" fill="#53657d" font-family="Inter, Arial, sans-serif" font-size="26">Moderní design. Jasné ceny. Osobní přístup.</text>
 </svg>

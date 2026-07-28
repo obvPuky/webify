@@ -67,7 +67,7 @@
 
     const getRailLabel = section => {
       const source = section.querySelector(".sec-kicker") || section.querySelector("h2");
-      return source?.textContent.trim() || (section.id === "top" ? "Web-ify" : section.id);
+      return source?.textContent.trim() || (section.id === "top" ? "Webfine" : section.id);
     };
 
     const syncRail = (section, animate = true) => {
