@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://web-ify.cz/reference/beersbarber/sitemap.xml
+Sitemap: https://webfine.cz/reference/beersbarber/sitemap.xml
