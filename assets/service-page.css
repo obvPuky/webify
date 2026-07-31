@@ -207,6 +207,10 @@ h1{
 
 footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px 0;color:var(--dim);font:500 10px/1.7 "DM Mono",monospace;letter-spacing:.03em}
 footer a{color:var(--text)}
+.footer-content{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footer-socials{display:flex;align-items:center;gap:14px}
+.footer-socials a{text-underline-offset:4px;transition:color .2s var(--ease)}
+.footer-socials a:hover{color:var(--accent)}
 
 .references-page{padding-top:0}
 .reference-hero{padding:clamp(90px,10vw,150px) 0 24px}
@@ -339,6 +343,7 @@ footer a{color:var(--text)}
   .project-preview{height:260px}
   .reference-copy p{min-height:0}
   .reference-cta{align-items:flex-start;flex-direction:column}
+  .footer-content{align-items:flex-start;flex-direction:column;gap:12px}
 }
 
 @media(prefers-reduced-motion:reduce){
