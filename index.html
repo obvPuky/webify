@@ -1003,7 +1003,6 @@ body.light-mode .project-metrics b{color:#10223f}
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_next" id="formNext" value="">
-        <input type="hidden" name="_url" id="formUrl" value="">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="form-grid">
@@ -1013,7 +1012,7 @@ body.light-mode .project-metrics b{color:#10223f}
           </div>
           <div class="field">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="vas@email.cz" autocomplete="email" required>
+            <input type="email" id="email" name="E-mail" placeholder="vas@email.cz" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="phone" data-i18n="formPhone">Telefon</label>
@@ -1132,13 +1131,9 @@ els.forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
 const form=document.getElementById('contactForm');
 const submitBtn=document.getElementById('submitBtn');
 const nextField=document.getElementById('formNext');
-const urlField=document.getElementById('formUrl');
-const formPageUrl=window.location.href.split('#')[0];
 if(nextField){
-  nextField.value=formPageUrl.startsWith('file://') ? '' : formPageUrl + '#poptavka-odeslana';
-}
-if(urlField){
-  urlField.value=formPageUrl.startsWith('file://') ? '' : formPageUrl;
+  const base=window.location.href.split('#')[0];
+  nextField.value=base.startsWith('file://') ? '' : base + '#poptavka-odeslana';
 }
 if(form){
   form.addEventListener('submit',()=>{
