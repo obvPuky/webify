@@ -119,6 +119,7 @@ section{position:relative;padding:100px 0}.hero{min-height:100svh;display:flex;a
 .contact-box{border:1px solid var(--line);border-radius:34px;background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(96,165,250,.12),rgba(17,24,39,.9));padding:60px;text-align:center}.contact-box h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.06em;line-height:1}.contact-box p{color:var(--muted);margin:18px auto 28px;max-width:620px;line-height:1.7}.contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 .contact-form{max-width:820px;margin:34px auto 0;text-align:left;display:flex;flex-direction:column;gap:18px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.055);color:var(--white);padding:15px 16px;font:inherit;outline:none;transition:.25s}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(59,130,246,.12);background:rgba(59,130,246,.07)}.field input::placeholder,.field textarea::placeholder{color:rgba(170,179,197,.65)}.field select option{background:#111827;color:#fff}.contact-form .btn{align-self:center;min-width:230px}.form-note{text-align:center!important;font-size:13px!important;margin:0 auto!important;color:var(--muted)!important}
+.form-success{display:none;grid-column:1/-1;width:100%;min-height:430px;max-width:720px;margin:0 auto;align-items:center;justify-content:center;flex-direction:column;text-align:center}.contact-box.is-submitted>.contact-intro{display:none}.contact-box.is-submitted .contact-form{display:none}.contact-box.is-submitted .form-success{display:flex;animation:formSuccessEnter .7s cubic-bezier(.16,1,.3,1) both}.form-success-mark{position:relative;width:96px;height:96px;display:grid;place-items:center;margin-bottom:28px;border:1px solid rgba(59,130,246,.4);border-radius:50%;background:rgba(59,130,246,.12);color:var(--cyan);font-size:42px;font-weight:900;box-shadow:inset 0 0 0 8px rgba(59,130,246,.05);animation:formSuccessMark .65s .12s cubic-bezier(.16,1,.3,1) both}.form-success-mark::after{content:"";position:absolute;inset:-14px;border:1px solid rgba(59,130,246,.32);border-radius:50%;animation:formSuccessPulse 1.1s .32s cubic-bezier(.16,1,.3,1) both}.form-success-kicker{margin:0 0 14px!important;color:var(--cyan)!important;font-family:'JetBrains Mono',monospace;font-size:12px!important;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.form-success h3{max-width:640px;font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.055em}.form-success-text{margin:18px auto 0!important;font-size:16px!important}.form-success>*:not(.form-success-mark){animation:formSuccessCopy .55s .3s cubic-bezier(.16,1,.3,1) both}@keyframes formSuccessEnter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes formSuccessMark{from{opacity:0;transform:scale(.55) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}@keyframes formSuccessPulse{0%{opacity:0;transform:scale(.72)}45%{opacity:1}100%{opacity:0;transform:scale(1.28)}}@keyframes formSuccessCopy{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .privacy-confirm{grid-column:1/-1;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);padding:14px 16px}.privacy-confirm label{display:flex;align-items:flex-start;gap:12px;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;letter-spacing:0;text-transform:none;color:var(--muted);cursor:pointer}.privacy-confirm input{width:18px;height:18px;flex:0 0 18px;margin-top:1px;padding:0;accent-color:var(--cyan)}.privacy-inline-link{border:0;background:none;color:var(--cyan);font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}.privacy-inline-link:hover{color:var(--white)}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .footer-meta,.footer-links,.footer-company{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.footer-company{gap:12px}.footer-company b{color:var(--white);font-weight:700}.footer-privacy{border:0;background:none;color:var(--muted);font:inherit;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:0}.footer-privacy:hover{color:var(--cyan)}
@@ -995,8 +996,10 @@ body.light-mode .project-metrics b{color:#10223f}
 <section id="kontakt">
   <div class="wrap">
     <div class="contact-box reveal">
-      <h2 data-i18n="contactTitle">Chcete vlastní web?</h2>
-      <p data-i18n="contactText">Napište nám a domluvíme první konzultaci. Odpovíme obvykle do 24 hodin.</p>
+      <div class="contact-intro">
+        <h2 data-i18n="contactTitle">Chcete vlastní web?</h2>
+        <p data-i18n="contactText">Napište nám a domluvíme první konzultaci. Odpovíme obvykle do 24 hodin.</p>
+      </div>
 
       <form class="contact-form" id="contactForm" action="https://formsubmit.co/team@webfine.cz" method="POST">
         <input type="hidden" name="_subject" value="Nová poptávka z webu Webfine">
@@ -1047,6 +1050,12 @@ body.light-mode .project-metrics b{color:#10223f}
         <button type="submit" class="btn btn-primary" id="submitBtn" data-i18n="formSubmit">Odeslat poptávku</button>
         <p class="form-note" data-i18n-html="formNote">Poptávku zpracujeme bezpečně a ozveme se na váš e-mail.</p>
       </form>
+      <div class="form-success" id="formSuccess" role="status" aria-live="polite" aria-hidden="true">
+        <div class="form-success-mark" aria-hidden="true">✓</div>
+        <p class="form-success-kicker" id="formSuccessKicker">Poptávka odeslána</p>
+        <h3 id="formSuccessTitle" tabindex="-1">E-mail byl úspěšně odeslán.</h3>
+        <p class="form-success-text" id="formSuccessText">Děkujeme. Ozveme se vám co nejdříve.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1143,11 +1152,28 @@ if(form){
   });
 }
 if(window.location.hash==='#poptavka-odeslana' && form){
-  const note=form.querySelector('.form-note');
-  const success={cs:'Díky! Poptávka byla odeslána. Ozveme se co nejdříve.',en:'Thank you! Your inquiry was sent. We will reply as soon as possible.',pl:'Dziękujemy! Zapytanie zostało wysłane. Odpowiemy jak najszybciej.',de:'Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns so schnell wie möglich.'};
-  if(note) note.textContent=success[localStorage.getItem('webify-lang') || 'cs'];
+  const contactBox=form.closest('.contact-box');
+  const successPanel=document.getElementById('formSuccess');
+  const successKicker=document.getElementById('formSuccessKicker');
+  const successTitle=document.getElementById('formSuccessTitle');
+  const successText=document.getElementById('formSuccessText');
+  const success={
+    cs:{kicker:'Poptávka odeslána',title:'E-mail byl úspěšně odeslán.',text:'Děkujeme. Ozveme se vám co nejdříve.'},
+    en:{kicker:'Inquiry sent',title:'Your email was sent successfully.',text:'Thank you. We will get back to you as soon as possible.'},
+    pl:{kicker:'Zapytanie wysłane',title:'Wiadomość e-mail została wysłana.',text:'Dziękujemy. Odezwiemy się tak szybko, jak to możliwe.'},
+    de:{kicker:'Anfrage gesendet',title:'Ihre E-Mail wurde erfolgreich gesendet.',text:'Vielen Dank. Wir melden uns so schnell wie möglich.'}
+  };
+  const lang=localStorage.getItem('webify-lang') || 'cs';
+  const copy=success[lang] || success.cs;
+  if(successKicker) successKicker.textContent=copy.kicker;
+  if(successTitle) successTitle.textContent=copy.title;
+  if(successText) successText.textContent=copy.text;
+  contactBox?.classList.add('is-submitted');
+  form.setAttribute('aria-hidden','true');
+  if(successPanel) successPanel.setAttribute('aria-hidden','false');
   form.dataset.submitted='true';
-  document.getElementById('kontakt')?.scrollIntoView({behavior:'smooth'});
+  document.getElementById('kontakt')?.scrollIntoView({behavior:'auto',block:'center'});
+  successTitle?.focus({preventScroll:true});
   history.replaceState(null,'',window.location.pathname+'#kontakt');
 }
 
