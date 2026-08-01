@@ -740,6 +740,17 @@ h1{
 }
 .contact-box h2{font-size:clamp(46px,6vw,84px);font-weight:640;line-height:.91;letter-spacing:-.07em;text-wrap:balance}
 .contact-box>p{max-width:38ch;margin:0;color:var(--muted)}
+.contact-phone{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:7px;
+  margin-top:30px;
+  color:var(--white);
+}
+.contact-phone span{color:var(--accent);font:600 9px/1 "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.contact-phone strong{font:630 clamp(24px,2.8vw,36px)/1 "Syne",sans-serif;letter-spacing:-.045em;transition:color .25s var(--ease)}
+.contact-phone:hover strong{color:var(--accent)}
 .contact-form{grid-column:2;grid-row:1/span 2;max-width:none;width:100%;margin:0;gap:18px}
 .field label{
   display:inline-flex;
