@@ -1069,6 +1069,7 @@ body.light-mode .service-modal-box,body.light-mode .privacy-dialog,body.light-mo
   .nav-end{gap:8px}
   .mobile-panel{background:rgba(10,10,8,.95)}
   .mobile-panel a{background:none;-webkit-text-fill-color:initial;color:var(--cream);font-family:"Syne",sans-serif}
+  body.light-mode .mobile-panel a{color:#2563eb;-webkit-text-fill-color:#2563eb}
   .hero{min-height:auto;padding-top:128px}
   .hero-grid{grid-template-columns:1fr;gap:58px}
   h1{max-width:720px;font-size:clamp(60px,13vw,96px)}
