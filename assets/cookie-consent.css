@@ -1,34 +1,10 @@
-@font-face {
-  font-family: "Manrope";
-  src: url("fonts/Manrope-VariableFont_wght.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("fonts/DMMono-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
 .wf-cookie-consent {
   position: fixed;
   inset: auto 16px 16px;
   z-index: 3000;
   pointer-events: none;
   color: #f7fbff;
-  font-family: "Manrope", Arial, sans-serif;
+  font-family: Inter, "DM Sans", Arial, sans-serif;
 }
 
 .wf-cookie-card {
@@ -75,7 +51,7 @@
 .wf-cookie-card h2 {
   margin: 0;
   color: inherit;
-  font: 700 clamp(20px, 2.4vw, 29px)/1.12 "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font: 700 clamp(20px, 2.4vw, 29px)/1.12 Syne, Inter, sans-serif;
   letter-spacing: -.025em;
 }
 
@@ -109,7 +85,7 @@
   padding: 0 18px;
   border: 1px solid #60a5fa;
   border-radius: 10px;
-  font: 700 13px/1 "Manrope", Arial, sans-serif;
+  font: 700 13px/1 Inter, Arial, sans-serif;
   cursor: pointer;
   transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
 }
